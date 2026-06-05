@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: hexagonal-ddd-config
+  namespace: hexagonal-ddd
+data:
+  NODE_ENV: "production"
+  PORT: "3000"
+  API_VERSION: "v1"
+  POSTGRES_PORT: "5432"
+  POSTGRES_DB: "hexagonal_db"
+  POSTGRES_POOL_MIN: "2"
+  POSTGRES_POOL_MAX: "10"
+  REDIS_PORT: "6379"
+  REDIS_DB: "0"
+  REDIS_TTL: "3600"
+  KAFKA_CLIENT_ID: "hexagonal-ddd-api"
+  KAFKA_GROUP_ID: "hexagonal-ddd-group"
+  LOG_LEVEL: "info"
+  LOG_FORMAT: "json"

@@ -1,0 +1,7 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hexagonal-ddd-api
+  namespace: hexagonal-ddd
+spec:
+  replicas: 3
