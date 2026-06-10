@@ -1,8 +1,8 @@
 import { Module } from '@nestjs/common';
-import { getPool } from '../../infrastructure/persistence/postgres/pool';
-import { getRedisCache } from '../../infrastructure/persistence/redis/RedisCache';
-import { getKafkaPublisher } from '../../infrastructure/messaging/kafka/producers/KafkaEventPublisher';
-import { PostgresOrderRepository } from '../../infrastructure/persistence/postgres/repositories/PostgresOrderRepository';
+import { getPool } from '../infrastructure/persistence/postgres/pool';
+import { getRedisCache } from '../infrastructure/persistence/redis/RedisCache';
+import { getKafkaPublisher } from '../infrastructure/messaging/kafka/producers/KafkaEventPublisher';
+import { PostgresOrderRepository } from '../infrastructure/persistence/postgres/repositories/PostgresOrderRepository';
 
 export const POSTGRES_POOL = 'POSTGRES_POOL';
 export const REDIS_CACHE = 'REDIS_CACHE';

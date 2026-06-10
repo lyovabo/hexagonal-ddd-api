@@ -6,8 +6,8 @@ import {
   HttpStatus,
 } from '@nestjs/common';
 import { Response } from 'express';
-import { AppError } from '../../infrastructure/http/middlewares/errorHandler';
-import { logger } from '../../infrastructure/http/middlewares/Logger';
+import { AppError } from '../../middlewares/errorHandler';
+import { logger } from '../../middlewares/Logger';
 
 @Catch()
 export class AppExceptionFilter implements ExceptionFilter {

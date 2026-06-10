@@ -11,16 +11,16 @@ import {
   Inject,
 } from '@nestjs/common';
 import Joi from 'joi';
-import { CreateOrderUseCase } from '../../application/use-cases/CreateOrderUseCase';
-import { GetOrderUseCase } from '../../application/use-cases/GetOrderUseCase';
-import { UpdateOrderStatusUseCase } from '../../application/use-cases/UpdateOrderStatusUseCase';
-import { CreateOrderDto } from '../../application/dtos/OrderDto';
+import { CreateOrderUseCase } from '../../../../application/use-cases/CreateOrderUseCase';
+import { GetOrderUseCase } from '../../../../application/use-cases/GetOrderUseCase';
+import { UpdateOrderStatusUseCase } from '../../../../application/use-cases/UpdateOrderStatusUseCase';
+import { CreateOrderDto } from '../../../../application/dtos/OrderDto';
 import {
   CREATE_ORDER_USE_CASE,
   GET_ORDER_USE_CASE,
   UPDATE_ORDER_STATUS_USE_CASE,
-} from './order.tokens';
-import { JoiValidationPipe } from '../common/joi-validation.pipe';
+} from '../../../../composition/order.tokens';
+import { JoiValidationPipe } from '../pipes/joi-validation.pipe';
 
 const createOrderSchema = Joi.object({
   customerId: Joi.string().required(),

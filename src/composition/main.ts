@@ -1,14 +1,14 @@
 import 'reflect-metadata';
 import 'dotenv/config';
 import { NestFactory } from '@nestjs/core';
-import { AppModule } from './nest/app.module';
-import { AppExceptionFilter } from './nest/common/app-exception.filter';
-import { config } from './config';
-import { getRedisCache } from './infrastructure/persistence/redis/RedisCache';
-import { getKafkaPublisher } from './infrastructure/messaging/kafka/producers/KafkaEventPublisher';
-import { OrderEventsConsumer } from './infrastructure/messaging/kafka/consumers/OrderEventsConsumer';
-import { runMigrations } from './infrastructure/persistence/postgres/migrations/migrate';
-import { logger } from './infrastructure/http/middlewares/Logger';
+import { AppModule } from './app.module';
+import { AppExceptionFilter } from '../infrastructure/http/nest/filters/app-exception.filter';
+import { config } from '../config';
+import { getRedisCache } from '../infrastructure/persistence/redis/RedisCache';
+import { getKafkaPublisher } from '../infrastructure/messaging/kafka/producers/KafkaEventPublisher';
+import { OrderEventsConsumer } from '../infrastructure/messaging/kafka/consumers/OrderEventsConsumer';
+import { runMigrations } from '../infrastructure/persistence/postgres/migrations/migrate';
+import { logger } from '../infrastructure/http/middlewares/Logger';
 
 async function bootstrap(): Promise<void> {
   logger.info('Starting application (NestJS)...', { env: config.app.env });
