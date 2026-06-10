@@ -1,8 +1,8 @@
 import { Controller, Get, HttpStatus, Res } from '@nestjs/common';
 import { Response } from 'express';
-import { checkPostgresHealth } from '../../infrastructure/persistence/postgres/pool';
-import { getRedisCache } from '../../infrastructure/persistence/redis/RedisCache';
-import { getKafkaPublisher } from '../../infrastructure/messaging/kafka/producers/KafkaEventPublisher';
+import { checkPostgresHealth } from '../../../persistence/postgres/pool';
+import { getRedisCache } from '../../../persistence/redis/RedisCache';
+import { getKafkaPublisher } from '../../../messaging/kafka/producers/KafkaEventPublisher';
 
 @Controller('health')
 export class HealthController {

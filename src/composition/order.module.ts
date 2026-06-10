@@ -1,13 +1,13 @@
 import { Module } from '@nestjs/common';
-import { InfrastructureModule, ORDER_REPOSITORY, REDIS_CACHE, KAFKA_PUBLISHER } from '../infrastructure/infrastructure.module';
-import { CreateOrderUseCase } from '../../application/use-cases/CreateOrderUseCase';
-import { GetOrderUseCase } from '../../application/use-cases/GetOrderUseCase';
-import { UpdateOrderStatusUseCase } from '../../application/use-cases/UpdateOrderStatusUseCase';
-import { Logger } from '../../infrastructure/http/middlewares/Logger';
-import { OrderRepository } from '../../domain/repositories/OrderRepository';
-import { EventPublisher } from '../../application/ports/out/EventPublisher';
-import { CachePort } from '../../application/ports/out/CachePort';
-import { NestOrderController } from './order.controller';
+import { InfrastructureModule, ORDER_REPOSITORY, REDIS_CACHE, KAFKA_PUBLISHER } from './infrastructure.module';
+import { CreateOrderUseCase } from '../application/use-cases/CreateOrderUseCase';
+import { GetOrderUseCase } from '../application/use-cases/GetOrderUseCase';
+import { UpdateOrderStatusUseCase } from '../application/use-cases/UpdateOrderStatusUseCase';
+import { Logger } from '../infrastructure/http/middlewares/Logger';
+import { OrderRepository } from '../domain/repositories/OrderRepository';
+import { EventPublisher } from '../application/ports/out/EventPublisher';
+import { CachePort } from '../application/ports/out/CachePort';
+import { NestOrderController } from '../infrastructure/http/nest/controllers/order.controller';
 import {
   CREATE_ORDER_USE_CASE,
   GET_ORDER_USE_CASE,
