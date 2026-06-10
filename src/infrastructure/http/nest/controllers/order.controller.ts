@@ -19,7 +19,7 @@ import {
   CREATE_ORDER_USE_CASE,
   GET_ORDER_USE_CASE,
   UPDATE_ORDER_STATUS_USE_CASE,
-} from './order.module';
+} from './order.tokens';
 import { JoiValidationPipe } from '../common/joi-validation.pipe';
 
 const createOrderSchema = Joi.object({
