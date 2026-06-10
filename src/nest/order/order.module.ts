@@ -8,10 +8,11 @@ import { OrderRepository } from '../../domain/repositories/OrderRepository';
 import { EventPublisher } from '../../application/ports/out/EventPublisher';
 import { CachePort } from '../../application/ports/out/CachePort';
 import { NestOrderController } from './order.controller';
-
-export const CREATE_ORDER_USE_CASE = 'CREATE_ORDER_USE_CASE';
-export const GET_ORDER_USE_CASE = 'GET_ORDER_USE_CASE';
-export const UPDATE_ORDER_STATUS_USE_CASE = 'UPDATE_ORDER_STATUS_USE_CASE';
+import {
+  CREATE_ORDER_USE_CASE,
+  GET_ORDER_USE_CASE,
+  UPDATE_ORDER_STATUS_USE_CASE,
+} from './order.tokens';
 
 @Module({
   imports: [InfrastructureModule],

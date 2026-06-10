@@ -27,7 +27,7 @@ async function bootstrap(): Promise<void> {
   await consumer.start();
   logger.info('Kafka consumer started');
 
-  const app = await NestFactory.create(AppModule, { logger: false });
+  const app = await NestFactory.create(AppModule);
 
   app.useGlobalFilters(new AppExceptionFilter());
   app.setGlobalPrefix(`api/${config.app.apiVersion}`, {
