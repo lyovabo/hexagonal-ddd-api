@@ -5,3 +5,13 @@ coverage/
 *.local
 *.log
 .DS_Store
+
+# Compiled TS artifacts that leak outside dist/
+config/*.js
+config/*.js.map
+config/*.d.ts
+config/*.d.ts.map
+
+# Local tooling / scratch
+.claude/
+architecture.html
