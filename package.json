@@ -5,9 +5,9 @@
   "main": "dist/index.js",
   "scripts": {
     "build": "tsc",
-    "start": "node dist/main.js",
+    "start": "node dist/composition/main.js",
     "start:legacy": "node dist/index.js",
-    "dev": "ts-node-dev --respawn --transpile-only src/main.ts",
+    "dev": "ts-node-dev --respawn --transpile-only src/composition/main.ts",
     "dev:legacy": "ts-node-dev --respawn --transpile-only src/index.ts",
     "test": "jest --coverage",
     "test:unit": "jest tests/unit",
@@ -17,7 +17,8 @@
     "migrate:dev": "ts-node scripts/migrate.ts",
     "lint": "eslint src --ext .ts",
     "lint:fix": "eslint src --ext .ts --fix",
-    "docker:up": "docker compose up -d",
+    "docker:up": "docker compose up -d api postgres redis kafka zookeeper kafka-ui",
+    "docker:up:dev": "docker compose up api-dev postgres redis kafka zookeeper kafka-ui",
     "docker:down": "docker compose down",
     "docker:build": "docker build -t hexagonal-ddd-api ."
   },
